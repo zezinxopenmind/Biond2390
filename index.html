@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open you mind.</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <style>
+      /* Define um fundo preto em toda a página */
+      html, body {
+        height: 100%;
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Centraliza o conteúdo na página */
+      #content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      
+      /* Define estilos para o texto central */
+      #text {
+        font-family: 'Merriweather', monospace;
+        font-size: 3rem;
+        color: #0F0; /* Cor verde */
+      }
+      
+      /* Define estilos para o texto inferior */
+      #footer {
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        color: #FFF; /* Cor branca */
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <p id="text"></p>
+      <p id="footer">@Criado por @l1stlipe, Biografia ;)</p>
+    </div>
+    <script>
+      // Função para animar o texto em loop
+      function typeWriter(text, i) {
+        if (i < text.length) {
+          document.getElementById("text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(function() {
+            typeWriter(text, i);
+          }, 100); // Atraso em milissegundos entre as chamadas da função
+        } else {
+          setTimeout(function() {
+            document.getElementById("text").innerHTML = "";
+            typeWriter(text, 0);
+          }, 1500); // Atraso em milissegundos antes de reiniciar a animação
+        }
+      }
+
+      // Inicia o efeito de digitação em loop quando a página é carregada
+      window.onload = function() {
+        var text = "$zezinx: Open you mind.";
+        typeWriter(text, 0);
+      };
+    </script>
+  </body>
+  <style>
+      /* Define um fundo preto em toda a página */
+      html, body {
+        height: 100%;
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Define estilos para o botão "Sobre" */
+      #about {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: 'Inconsolata', monospace;
+        font-size: 1.5rem;
+        color: #0F0; /* Cor verde */
+        text-shadow: 0 0 10px #0F0; /* Sombra de texto verde */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="sobre.html"><button id="about">Sobre</button></a>
+  </body>
+</html>
